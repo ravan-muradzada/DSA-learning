@@ -25,7 +25,7 @@ That is a litte bit better algorithm than previous one, in terms of space comple
     From the swapping 1 with itself, 2 and 3, we will get [1, 2, 3], [2, 1, 3] and [3, 2, 1]. 
     The first swapping wave finished.
     Now let's do it for the second element of each array, so we need the swap each the second element with
-    iteflt and the third one. The result: [1, 2, 3], [1, 3, 2]; [2, 1, 3], [2, 3, 1]; [3, 2, 1], [3, 1, 2].
+    itself and the third one. The result: [1, 2, 3], [1, 3, 2]; [2, 1, 3], [2, 3, 1]; [3, 2, 1], [3, 1, 2].
     Now, let's do it for the third 
     element of the array. There is just one number for swapping for the third element (in our example) and that is itself,
     so the permutations will not change.

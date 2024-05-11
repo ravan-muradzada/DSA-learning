@@ -2,11 +2,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<vector<int>> allCombinations;
+vector<vector<int>> allPermutations;
 
 void backtrack(vector<int>& nums, int indx, int mainArray_size){
     if (indx == mainArray_size){
-        allCombinations.push_back(nums);
+        allPermutations.push_back(nums);
         return;
     }
     
@@ -32,7 +32,7 @@ That is a litte bit better algorithm than previous one, in terms of space comple
     Thus, we can say our permutations are [1, 2, 3], [1, 3, 2]; [2, 1, 3], [2, 3, 1]; [3, 2, 1], [3, 1, 2].
     
     You can ask, why in the each iteration of the loop, why we swap twice? 
-    The answer: Actually after swapping and sending it to the new reality where it will be added to the allCombinations 
+    The answer: Actually after swapping and sending it to the new reality where it will be added to the allPermutations 
     array, we need to set it back to the previous version to be able to have new permutation from the source one.
 
 */
@@ -43,7 +43,7 @@ int main(){
     int mainArray_size = nums.size();
     backtrack(nums, 0, mainArray_size);
     
-    for (auto i: allCombinations){
+    for (auto i: allPermutations){
         for (int j: i){
             cout << j << " ";
         } cout << endl;

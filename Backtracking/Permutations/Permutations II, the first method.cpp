@@ -2,11 +2,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<vector<int>> allCombinations;
+vector<vector<int>> allPermutations;
 
 void backtrack(vector<int>& nums, vector<int>& curr, vector<bool>& used, int size, int indx){
     if (indx == size){
-        allCombinations.push_back(curr);
+        allPermutations.push_back(curr);
     }
     
     for (int i = 0; i < size; ++i){
@@ -57,7 +57,7 @@ int main(){
     
     backtrack(nums, curr, used, size, 0);
     
-    for (auto i: allCombinations){
+    for (auto i: allPermutations){
         for (int j: i){
             cout << j << " ";
         } cout << endl;

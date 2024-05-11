@@ -24,10 +24,12 @@ That is a litte bit better algorithm than previous one, in terms of space comple
     Let's start with 1. 
     From the swapping 1 with itself, 2 and 3, we will get [1, 2, 3], [2, 1, 3] and [3, 2, 1]. 
     The first swapping wave finished.
-    Now let's do it for the second element of each array: [1, 3, 2], [2, 3, 1], [3, 1, 2]. Now, let's do it for the third 
+    Now let's do it for the second element of each array, so we need the swap each the second element with
+    iteflt and the third one. The result: [1, 2, 3], [1, 3, 2]; [2, 1, 3], [2, 3, 1]; [3, 2, 1], [3, 1, 2].
+    Now, let's do it for the third 
     element of the array. There is just one number for swapping for the third element (in our example) and that is itself,
     so the permutations will not change.
-    Thus, we can say our permutations are [1, 2, 3], [2, 1, 3], [3, 2, 1], [1, 3, 2], [2, 3, 1], [3, 1, 2].
+    Thus, we can say our permutations are [1, 2, 3], [1, 3, 2]; [2, 1, 3], [2, 3, 1]; [3, 2, 1], [3, 1, 2].
     
     You can ask, why in the each iteration of the loop, why we swap twice? 
     The answer: Actually after swapping and sending it to the new reality where it will be added to the allCombinations 

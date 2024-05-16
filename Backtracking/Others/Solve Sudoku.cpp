@@ -29,8 +29,8 @@ int main(){
 }
 
 void printSudoku(){
-    for (int i = 0; i < 9; ++i){
-        for (int j = 0; j < 9; ++j){
+    for (int i = 0; i < maxSize; ++i){
+        for (int j = 0; j < maxSize; ++j){
             cout << board[i][j] << " ";
         }
         cout << endl;

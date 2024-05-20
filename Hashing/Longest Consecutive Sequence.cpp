@@ -13,7 +13,7 @@ int longestConsecutive(vector<int>& nums){
         if (st.find(i - 1) == st.end()){
             int startingNum = i;
             size = 1;
-            while (st.find(startingNum) != st.end()){
+            while (st.find(startingNum + 1) != st.end()){
                 startingNum++; size++;
             }
         }

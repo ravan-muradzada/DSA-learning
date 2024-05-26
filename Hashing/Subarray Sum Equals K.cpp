@@ -21,6 +21,16 @@ int subarraySum(vector<int>& nums, int k){
     return count;
 }
 
+/*
+    To get the proper sequences we need this formula: sumBetween(i, j) = sumBetween(0, i) - sumBetween(0, j). Imagine, 
+    i > j and they are indices of the array.
+    
+    Up to the specific points, the sum is (0, j) and current prefix sum is (0, i). We just need to count += mp[current - previousOnes]
+    Let's call (0, j) sum as P.
+    It is possible to have the P sum multiple times. Such us in the array of [1, 2, 3, -2, -3, 3, 2, 124], here the sum in
+    the interval of (1, 2) is 5 and also it is correct for (1, 6). If our k is 129, we have two subarrays.
+
+*/
 
 int main(){
     vector<int> nums = {1, 2, 3, 4, 5};

@@ -33,7 +33,7 @@ vector<vector<int>> generateMatrix(int n){
 void printMatrix(vector<vector<int>>& matrix){
     for (auto& i: matrix){
         for (int j: i){
-            printf("%4d", j);
+            printf("%5d", j);
         }
         cout << endl;
     }
@@ -45,10 +45,7 @@ int main(){
     
     auto result = generateMatrix(n);
     
-    for (auto& i: result){
-        for (int j: i) printf("%4d", j);
-        cout << endl;
-    }
+    printMatrix(result);
     
     return 0;
 }

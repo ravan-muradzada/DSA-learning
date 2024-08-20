@@ -1,55 +1,56 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+    
 void findMinMax(vector<int>& nums, int& left, int& right){
-    left = nums[0];
-    right = 0;
-    for (int i = 0; i < nums.size(); ++i){
+    left = right = nums[0];
+
+    for (int i = 1; i < nums.size(); ++i){
         left = max(left, nums[i]);
         right += nums[i];
-    }    
+    }
 }
 
-int determine(vector<int>& arr, int mid){
-    int st = 1, curr = 0;
-    
-    for (int i = 0; i < arr.size(); ++i){
-        if (curr + arr[i] > mid){
-            curr = 0;
-            st++;
+bool determine(vector<int>& nums, int m, int mid){
+    int count = 1, sum = 0;
+
+    for (int i = 0; i < nums.size(); ++i){
+        if (nums[i] > mid) return false;
+        if (sum + nums[i] > mid){
+            count++;
+            sum = 0;
         }
-        curr += arr[i];
+        sum += nums[i];
     }
-    
-    return st;
+
+    return (m >= count); 
 }
 
 int findPages(vector<int>& arr, int m){
+    int n = arr.size();
+    if (m > n) return -1;
     int left, right;
     findMinMax(arr, left, right);
-    int mid, res = -1, st;
-    
+    int res = -1, mid;
+
     while (left <= right){
         mid = (left + right) / 2;
-        st = determine(arr, mid);
-        
-        if (st == m) res = mid;
-        
-        if (st > m){
-            left = mid + 1;
-        }else{
+
+        if (determine(arr, m, mid)){
+            res = mid;
             right = mid - 1;
+        }else{
+            left = mid + 1;
         }
     }
-    
+
     return res;
 }
 
 int main(){
-    vector<int> arr = {10, 20, 30, 40, 50};
-    int m = 3;    
+    vector<int> nums = {12, 34, 67, 90};
+    int m = 2;
     
-    cout << findPages(arr, m) << endl;
-        
+    cout << findPages(nums, m) << endl;
+    
     return 0;
 }
